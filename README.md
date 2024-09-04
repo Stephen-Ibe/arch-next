@@ -2,35 +2,47 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Ensure engine compatibility and stability at scale
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Add a .nvmrc file at the root level of your project and add the Node.js version number that you want this project to use.
+
+In this case, Node has been set to v18: `18.17.0`.
+
+You should also configure your package manager — in this case, npm — to strictly manage dependency usage for team members.
+
+Create a new file called npmrc and add the following code: `engine-strict=true`
+
+Now, go to the package.json file and add a new key-value pair:
+
+```json
+"engines": {
+    "node": ">=18.17.0",
+    "npm": "please-use-npm"
+},
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will ensure your project requires Node.js version 16 and above to run, and in this case, also enforces the use of `npm` as a package manager. Installing packages using `yarn/pnpm` will throw an error in this project. If you are using Yarn, you can add `please-use-yarn` instead.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+These measures will help ensure compatibility and stability at scale as your Next.js project grows and changes.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Engine Locking
 
-## Learn More
+It’s always a good idea to implement engine locking to ensure your project uses the same version across different environments. This will make your project less error-prone and ensure that it works as expected in both the development and production environments.
 
-To learn more about Next.js, take a look at the following resources:
+Engine locking is more of an npm feature than a Next.js feature, and it works across all npm projects. To enable this feature, all you have to do is specify a key called engines in your package.json file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+"engines" : {
+  "node" : "18.x"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+"18.x" represents any Node version starting with 18.
 
-## Deploy on Vercel
+You also have to create a config file for npm called .npmrc at the root level — the same level as package.json — and add this line:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`engine-strict=true`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This will make the Node project strict on the version that you specified earlier in the package.json file and will throw an error if there is a version mismatch on either the local or the production environment while installing.
+
+Engine locking is a good practice to follow especially when working with a large team and having different environments for testing and production.
