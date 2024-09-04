@@ -1,3 +1,10 @@
+.next
+.cache
 dist
+package.json
+package-lock.json
 node_modules
+next-env.d.ts
+next.config.ts
+yarn.lock
 package.json
