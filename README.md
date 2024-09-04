@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-### Ensure engine compatibility and stability at scale
+### Engine Compatibility and Stability at scale
 
 Add a .nvmrc file at the root level of your project and add the Node.js version number that you want this project to use.
 
@@ -46,3 +46,5 @@ You also have to create a config file for npm called .npmrc at the root level â€
 This will make the Node project strict on the version that you specified earlier in the package.json file and will throw an error if there is a version mismatch on either the local or the production environment while installing.
 
 Engine locking is a good practice to follow especially when working with a large team and having different environments for testing and production.
+
+### Code Formatting Rules

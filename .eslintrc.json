@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "globals": {
+    "React": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "warn"
+  }
 }
