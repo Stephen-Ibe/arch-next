@@ -5,14 +5,10 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       fontFamily: {
         title: ['Protest Guerrilla', 'sans-serif'],
         display: ['SUSE', 'sans-serif'],
@@ -25,6 +21,13 @@ const config: Config = {
         h5: '1.25rem',
         h6: '1rem',
       },
+    },
+    fontSize: {
+      xs: ['13px', '16px'],
+      sm: ['14px', '24px'],
+      base: ['15px', '24px'],
+      lg: ['16px', '24px'],
+      xl: ['26px', '40px'],
     },
   },
   plugins: [],

@@ -1,9 +1,8 @@
 import { theme } from '@/styles';
+import '@/styles/globals.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import type { Metadata } from 'next';
-import Head from 'next/head';
-import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Architect Next App',
@@ -17,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-mantine-color-scheme="light">
-      <Head>
+      <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -28,7 +27,7 @@ export default function RootLayout({
           defaultColorScheme="light"
           forceColorScheme="light"
         />
-      </Head>
+      </head>
       <body>
         <MantineProvider
           theme={theme}
