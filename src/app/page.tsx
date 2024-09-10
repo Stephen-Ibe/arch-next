@@ -34,9 +34,7 @@ export default function Home() {
           Quibusdam explicabo rerum magnam laboriosam, quaerat minima
           consequuntur beatae nesciunt ipsam at optio.
         </p>
-        <KJButton color="royal-blue.2" c="black">
-          Click Me
-        </KJButton>
+        <KJButton>Click Me</KJButton>
       </div>
     </main>
   );

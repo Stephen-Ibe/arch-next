@@ -22,6 +22,9 @@ const config: Config = {
       full: '99px',
     },
     extend: {
+      colors: {
+        
+      },
       fontFamily: {
         title: ['Protest Guerrilla', 'sans-serif'],
         display: ['SUSE', 'sans-serif'],

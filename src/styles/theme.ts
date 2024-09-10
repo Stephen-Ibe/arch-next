@@ -1,7 +1,6 @@
 import { createTheme, rem } from '@mantine/core';
 
 const theme = createTheme({
-  primaryColor: 'royal-blue',
   colors: {
     'royal-blue': [
       '#E7EEFD',
