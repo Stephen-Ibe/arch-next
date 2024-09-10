@@ -1,4 +1,5 @@
-import { Button, Title } from '@mantine/core';
+import { KJButton } from '@/components';
+import { Title } from '@mantine/core';
 
 export default function Home() {
   return (
@@ -33,7 +34,9 @@ export default function Home() {
           Quibusdam explicabo rerum magnam laboriosam, quaerat minima
           consequuntur beatae nesciunt ipsam at optio.
         </p>
-        <Button>Click Here!</Button>
+        <KJButton color="royal-blue.2" c="black">
+          Click Me
+        </KJButton>
       </div>
     </main>
   );
