@@ -8,6 +8,19 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      none: '0',
+      xs: '6px',
+      sm: '8px',
+      DEFAULT: '12',
+      md: '12px',
+      lg: '16px',
+      xl: '20px',
+      '2xl': '24px',
+      '3xl': '32px',
+      '4xl': '40px',
+      full: '99px',
+    },
     extend: {
       fontFamily: {
         title: ['Protest Guerrilla', 'sans-serif'],

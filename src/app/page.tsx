@@ -6,7 +6,7 @@ export default function Home() {
       <div>
         <Title order={1}>Welcome Onboard!</Title>
         <h1 className="font-title text-h1">Welcome Onboard!</h1>
-        <p className="font-display">
+        <p className="font-display border-4 p-8 mb-10">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
           doloremque culpa quam earum hic excepturi laborum nobis voluptate
           eaque quas fugit mollitia cupiditate, quae nesciunt itaque iusto
