@@ -1,12 +1,12 @@
+import { GetAllPostsApi } from '@/lib/services';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 export const fetchPosts = createAsyncThunk(
   'posts',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/poss/');
-      return res.data;
+      const res = await GetAllPostsApi();
+      return res;
     } catch (error: any) {
       return rejectWithValue(error);
     }
