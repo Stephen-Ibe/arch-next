@@ -3,6 +3,8 @@ import '@/styles/globals.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import type { Metadata } from 'next';
+import { Slide, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import StoreProvider from './StoreProvider';
 
 export const metadata: Metadata = {
@@ -38,6 +40,15 @@ export default function RootLayout({
           >
             {children}
           </MantineProvider>
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            closeOnClick
+            newestOnTop
+            theme="light"
+            transition={Slide}
+          />
         </StoreProvider>
       </body>
     </html>

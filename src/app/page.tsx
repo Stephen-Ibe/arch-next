@@ -3,14 +3,22 @@
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { fetchPosts } from '@/lib/redux/slices/posts/post.thunks';
 import { Title } from '@mantine/core';
+import { unwrapResult } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 export default function Home() {
   const dispatch = useAppDispatch();
   const { data, loading } = useAppSelector((state) => state.posts);
 
-  const fetchAllPosts = () => {
-    return dispatch(fetchPosts());
+  const fetchAllPosts = async () => {
+    try {
+      const res = await dispatch(fetchPosts()).unwrap();
+      console.log(res);
+    } catch (error: any) {
+      console.log(unwrapResult(error));
+      toast.error(error?.message);
+    }
   };
 
   useEffect(() => {

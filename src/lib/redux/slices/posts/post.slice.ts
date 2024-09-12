@@ -6,13 +6,13 @@ type TResponse = { userId: number; id: number; title: string; body: string };
 type TPostInitialState = {
   data: Array<TResponse>;
   loading: boolean;
-  error: Record<string, any>;
+  error: Record<string, any> | null;
 };
 
 const initialState = {
   data: [],
   loading: false,
-  error: {},
+  error: null,
 } satisfies TPostInitialState as TPostInitialState;
 
 const postsSlice = createSlice({
@@ -38,6 +38,7 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.fulfilled, (state, { payload }: any) => {
         state.loading = false;
         state.data = payload;
+        state.error = null;
       });
   },
 });
