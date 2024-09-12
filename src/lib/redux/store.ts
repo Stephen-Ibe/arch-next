@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { PostReducer } from './slices';
+
+const reducers = combineReducers({
+  posts: PostReducer,
+});
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: reducers,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
   });
 };
 

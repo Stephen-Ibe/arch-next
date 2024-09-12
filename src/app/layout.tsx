@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import type { Metadata } from 'next';
+import StoreProvider from './StoreProvider';
 
 export const metadata: Metadata = {
   title: 'Architect Next App',
@@ -29,13 +30,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <MantineProvider
-          theme={theme}
-          defaultColorScheme="light"
-          forceColorScheme="light"
-        >
-          {children}
-        </MantineProvider>
+        <StoreProvider>
+          <MantineProvider
+            theme={theme}
+            defaultColorScheme="light"
+            forceColorScheme="light"
+          >
+            {children}
+          </MantineProvider>
+        </StoreProvider>
       </body>
     </html>
   );
