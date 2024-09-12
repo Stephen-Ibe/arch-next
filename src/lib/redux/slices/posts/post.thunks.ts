@@ -13,6 +13,7 @@ export const fetchPosts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const res = await axios.get('https://jsonplaceholder.typicode.com/poss/');
+      console.error(res);
       return res.data;
     } catch (error: any) {
       return rejectWithValue(error);
